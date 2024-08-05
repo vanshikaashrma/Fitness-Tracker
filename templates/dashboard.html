@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h2>Your Workouts</h2>
+    {% for workout in workouts %}
+        <div>
+            <p>{{ workout.date.strftime('%Y-%m-%d') }}</p>
+            <p>{{ workout.exercise }}</p>
+            <p>Sets: {{ workout.sets }}</p>
+            <p>Reps: {{ workout.reps }}</p>
+            <p>Weight: {{ workout.weight }} kg</p>
+        </div>
+    {% endfor %}
+    <a href="{{ url_for('new_workout') }}">Add New Workout</a>
+{% endblock %}

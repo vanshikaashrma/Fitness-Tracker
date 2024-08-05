@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}New Workout{% endblock %}
+{% block content %}
+    <h2>Add New Workout</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.exercise.label }}<br>
+            {{ form.exercise(size=32) }}
+        </div>
+        <div>
+            {{ form.sets.label }}<br>
+            {{ form.sets() }}
+        </div>
+        <div>
+            {{ form.reps.label }}<br>
+            {{ form.reps() }}
+        </div>
+        <div>
+            {{ form.weight.label }}<br>
+            {{ form.weight() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
